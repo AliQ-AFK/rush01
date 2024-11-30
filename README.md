@@ -1,4 +1,4 @@
-# 🚀 Rush 01: Backtracking Puzzle Solver
+# 🚀 Rush 01: Backtracking Skyscrapper Puzzle Solver
 
 ## 🌟 Overview
 Welcome to **Rush 01**, an exciting grid-solving adventure born from the second Rush project of the Piscine at 42 Berlin! 🎓 This was a whirlwind 48-hour challenge where we dove headfirst into the world of backtracking algorithms, racing against the clock to solve puzzles with flair and efficiency!
