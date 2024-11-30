@@ -56,23 +56,6 @@ The game revolves around solving a grid-based puzzle. The rules are simple:
 - The program uses **backtracking** to fill the grid and checks if it satisfies all constraints.
 
 ---
-
-## 💻 Demo
-
-1. **Compile the Program**  
-   First, compile the program using the provided Makefile:
-   ```bash
-   make
-   ```
-
-2. **Run the Program**  
-   Pass the constraints as a single string when running the program:
-   ```bash
-   ./solution "3 3 1 2 2 1 2 4 2 4 2 1 1 2 3 3"
-   ```
-   - This example is for a **4x4 grid**.
-   - Constraints are grouped as: `top`, `bottom`, `left`, `right`.
-
 3. **Possible Outputs**  
    - If the input is valid and a solution exists, the program will print the solved grid:
      ```
