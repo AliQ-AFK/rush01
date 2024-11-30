@@ -63,8 +63,13 @@ int	*get_input_int_array(char *string, int length)
 	int	j;
 
 	inputs = (int *)malloc(length * sizeof(int));
+	if (!inputs)
+	{
+		return (NULL);
+	}
 	i = 0;
 	j = 0;
+
 	while (string[i])
 	{
 		if (string[i] >= '1' && string[i] <= '9')
