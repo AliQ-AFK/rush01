@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   solution_validation.c                              :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: vkhvosto <vkhvosto@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/13 18:29:11 by vkhvosto          #+#    #+#             */
-/*   Updated: 2024/10/13 22:26:31 by vkhvosto         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "library.h"
 
 int	validate_horizontal_visibility(int **grid, int row, int col, int cons[])

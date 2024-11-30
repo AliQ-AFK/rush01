@@ -1,17 +1,5 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: vkhvosto <vkhvosto@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/13 18:09:29 by vkhvosto          #+#    #+#             */
-/*   Updated: 2024/10/13 21:41:54 by vkhvosto         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include <stdlib.h>
-
 /**
  * Function to reverse a given array
  * Used in the function for checking the visibility from the right and bottom

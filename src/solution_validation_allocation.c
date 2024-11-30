@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   solution_validation_allocation.c                   :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: vkhvosto <vkhvosto@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/13 19:17:50 by vkhvosto          #+#    #+#             */
-/*   Updated: 2024/10/13 22:28:59 by vkhvosto         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "library.h"
 
 int	**allocate_constraints(int index, int size, int constraints[])
