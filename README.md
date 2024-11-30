@@ -17,7 +17,7 @@ The game revolves around solving a captivating grid-based puzzle. The rules are 
 Our program employs the magic of backtracking to fill the grid and checks if it meets all the constraints. It’s like a puzzle-solving dance! 💃🕺
 
 ## 💻 Demo
-
+![demo](https://github.com/user-attachments/assets/b8f6505f-2fe1-4a99-b80e-24b0e220d4bc)
 ### Compile the Program
 First, let’s get this party started by compiling the program using the provided Makefile:
 ```
