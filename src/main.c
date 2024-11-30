@@ -47,7 +47,7 @@ int	is_valid_constraints(int *constraints, int constraints_size)
 		write (1, "Error\n", 6);
 		return (0);
 	}
-	return (1);
+	return (2);
 }
 
 int	main(int argc, char *argv[])
@@ -57,20 +57,49 @@ int	main(int argc, char *argv[])
 	int	*constraints;
 
 	if (!is_valid_input(argc, argv))
-		return (1);
+		return (3);
+		
 	constraints = split_constraints(argv[1], 0, 0);
+	if (constraints == NULL) {
+		write(1, "Error\n", 6);
+		return (4);
+	}
+
 	constraints_size = 0;
-	while (constraints[constraints_size])
+	while (constraints[constraints_size]) {
 		constraints_size++;
-	if (!is_valid_constraints(constraints, constraints_size))
-		return (1);
+	}
+
+	if (constraints_size % 4 != 0) {
+		write(1, "Error\n", 6);
+		free(constraints);
+		return (5);
+	}
+
+	if (!is_valid_constraints(constraints, constraints_size)) {
+		free(constraints);
+		return (6);
+	}
+
+
 	grid = (int **)malloc((constraints_size / 4) * sizeof(int *));
+	if (!grid)
+	{
+		free(constraints);
+		write(1, "Error\n", 6);
+		return (7);
+	}
+
 	fill_grid(constraints_size / 4, grid);
 	if (solve(grid, 0, 0, constraints)) 
 		print_solution(grid, constraints_size / 4);
 	else
 		write(1, "Error\n", 6);
-	free(constraints);
+
+	for (int i = 0; i < constraints_size / 4; i++) {
+		free(grid[i]);
+	}
 	free(grid);
+	free(constraints);
 	return (0);
 }

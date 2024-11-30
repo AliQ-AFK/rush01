@@ -19,42 +19,52 @@ void	reverse(int *array, int size)
 	}
 }
 
-int	grid_size(int **grid)
-{
-	int	size;
+int grid_size(int **grid) {
+    int size = 0;
 
-	size = 0;
-	while (grid[size])
-		size++;
-	return (size);
+    // Ensure grid is not NULL and iterate until null terminator
+    while (grid[size]) {
+        size++;
+    }
+
+    return size;
 }
+
 
 /**
  * Function to split the constraints from the input string
  * into the array of integers
  */
-int	*split_constraints(char *input, int input_index, int output_index)
+int *split_constraints(char *input, int input_index, int output_index)
 {
-	int	*output;
-	int	size;
+    int *output;
+    int size = 0;
 
-	size = 0;
-	while (input[input_index])
+    // Calculate size
+    while (input[input_index])
 	{
-		if (input[input_index] >= '0' && input[input_index] <= '9')
-			size++;
-		input_index++;
-	}
-	output = (int *)malloc(size * sizeof(int));
-	input_index = 0;
-	while (input[input_index])
+        if (input[input_index] >= '0' && input[input_index] <= '9')
+            size++;
+        input_index++;
+    }
+
+    // Allocate memory for size + 1 to include the terminator
+    output = (int *)malloc((size + 1) * sizeof(int));
+    if (!output)
+        return NULL;
+
+    // Populate array
+    input_index = 0;
+    while (input[input_index] && output_index < size)
 	{
-		if (input[input_index] >= '0' && input[input_index] <= '9')
+        if (input[input_index] >= '0' && input[input_index] <= '9')
 		{
-			output[output_index] = input[input_index] - '0';
-			output_index++;
-		}
-		input_index++;
-	}
-	return (output);
+            output[output_index++] = input[input_index] - '0';
+        }
+        input_index++;
+    }
+
+    // Add termination value
+    output[size] = 0;
+    return output;
 }

@@ -1,32 +1,53 @@
 #include "library.h"
-
-int	**allocate_constraints(int index, int size, int constraints[])
+int **allocate_constraints(int index, int size, int constraints[])
 {
-	int	*top_constraints;
-	int	*bottom_constraints;
-	int	*left_constraints;
-	int	*right_constraints;
-	int	**allocated_constraints;
+    int **allocated_constraints = (int **)malloc(4 * sizeof(int *));
+    if (!allocated_constraints)
+        return NULL;
 
-	allocated_constraints = (int **)malloc(4 * sizeof(int *));
-	top_constraints = (int *)malloc(size * sizeof(int));
-	bottom_constraints = (int *)malloc(size * sizeof(int));
-	left_constraints = (int *)malloc(size * sizeof(int));
-	right_constraints = (int *)malloc(size * sizeof(int));
-	index = 0;
-	while (index < size)
+    allocated_constraints[0] = (int *)malloc(size * sizeof(int));
+    if (!allocated_constraints[0])
 	{
-		top_constraints[index] = constraints[index];
-		bottom_constraints[index] = constraints[size + index];
-		left_constraints[index] = constraints[size * 2 + index];
-		right_constraints[index] = constraints[size * 3 + index];
-		index++;
-	}
-	allocated_constraints[0] = top_constraints;
-	allocated_constraints[1] = bottom_constraints;
-	allocated_constraints[2] = left_constraints;
-	allocated_constraints[3] = right_constraints;
-	return (allocated_constraints);
+        free(allocated_constraints);
+        return NULL;
+    }
+
+    allocated_constraints[1] = (int *)malloc(size * sizeof(int));
+    if (!allocated_constraints[1])
+	{
+        free(allocated_constraints[0]);
+        free(allocated_constraints);
+        return NULL;
+    }
+
+    allocated_constraints[2] = (int *)malloc(size * sizeof(int));
+    if (!allocated_constraints[2])
+	{
+        free(allocated_constraints[0]);
+        free(allocated_constraints[1]);
+        free(allocated_constraints);
+        return NULL;
+    }
+
+    allocated_constraints[3] = (int *)malloc(size * sizeof(int));
+    if (!allocated_constraints[3])
+	{
+        free(allocated_constraints[0]);
+        free(allocated_constraints[1]);
+        free(allocated_constraints[2]);
+        free(allocated_constraints);
+        return NULL;
+    }
+
+    for (index = 0; index < size; index++)
+	{
+        allocated_constraints[0][index] = constraints[index];
+        allocated_constraints[1][index] = constraints[size + index];
+        allocated_constraints[2][index] = constraints[size * 2 + index];
+        allocated_constraints[3][index] = constraints[size * 3 + index];
+    }
+
+    return allocated_constraints;
 }
 
 int	**allocate_row_and_col(int size)

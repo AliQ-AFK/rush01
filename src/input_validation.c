@@ -52,9 +52,7 @@ int	*get_input_int_array(char *string, int length)
 
 	inputs = (int *)malloc(length * sizeof(int));
 	if (!inputs)
-	{
 		return (NULL);
-	}
 	i = 0;
 	j = 0;
 

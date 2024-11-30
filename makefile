@@ -1,10 +1,8 @@
-# Makefile for Rush project
-
 # Compiler
 CC = gcc
 
 # Compiler flags
-CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address -I.
+CFLAGS = -Wall -Wextra -Werror -g -I.
 
 # Directories
 SRC_DIR = src
@@ -13,7 +11,7 @@ SRC_DIR = src
 SRC = $(wildcard $(SRC_DIR)/*.c)
 
 # Output executable
-OUTPUT = rush
+OUTPUT = solution
 
 # Default rule
 all: $(OUTPUT)
