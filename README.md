@@ -58,9 +58,16 @@ Error
 This project was completed during the exhilarating Piscine at 42 Berlin. We kicked off on Friday at **18:42** and had to submit by Sunday at **23:42**. 🕒 Talk about working under pressure and rising to the challenge!
 
 ### Meet the Team 👩‍💻👨‍💻
-- **Viktor**: The debugger-in-chief 🐛, always ready to squash those pesky bugs!
-- **Alyona**: The backtracking wizard 🪄, weaving magic with algorithms!
-- **Ali Qeblawi**: The recursive mastermind 🔁, crafting solutions with elegance!
+
+**Viktor**: The mastermind, guiding the team and leading the way.
+
+**Alyona**: The input validation expert, ensuring everything worked as expected.
+
+**Ali**: Focused on input validation and debugging, helping to refine the solution.
+
+
+It was a team effort where everyone played a key role.
+
 
 ## ⚠️ Limitations
 - The program can handle grids up to **9x9**, but larger grids can take a bit longer to solve due to the computational complexity of backtracking. ⏳
